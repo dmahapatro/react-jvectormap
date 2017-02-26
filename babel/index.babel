@@ -1,0 +1,21 @@
+/*
+ * A simple React component
+ */
+class Application extends React.Component {
+  componentDidMount() {
+    const el = ReactDOM.findDOMNode(this.display);
+    $(el).vectorMap({map: 'world_mill'});
+  }
+  
+  render() {
+    return <div>
+      <h1>World Map</h1>
+      <div ref={disp => this.display = disp} />
+    </div>;
+  }
+}
+
+/*
+ * Render the above component into the div#app
+ */
+ReactDOM.render(<Application />, document.getElementById('app'));
